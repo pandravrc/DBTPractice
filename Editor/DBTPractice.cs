@@ -28,24 +28,26 @@ public class DBTPractice : MonoBehaviour
             blendType = BlendTreeType.Simple1D,
             blendParameter = "IIValue",
             name = $@"{PROJECTNAME}2",
-            useAutomaticThresholds=false,
+            useAutomaticThresholds = false,
         };
         BlendTree.AddDirectChild(BlendTree2, ONE);
-        for(int n = 0; n < 1000; n++)
-        {
-            int leftnum = n;
-            int Digit1 = leftnum % 10;
-            leftnum = (leftnum - Digit1) / 10;
-            int Digit2 = leftnum % 10;
-            leftnum = (leftnum - Digit2) / 10;
-            int Digit3 = leftnum % 10;
-            BlendTree2.AddChild(LoadMotion($@"Assets/DBTPractice/Res/Digit1/{Digit1}.anim"), (float)n);
-            BlendTree2.AddChild(LoadMotion($@"Assets/DBTPractice/Res/Digit2/{Digit2}.anim"), (float)n);
-            BlendTree2.AddChild(LoadMotion($@"Assets/DBTPractice/Res/Digit3/{Digit3}.anim"), (float)n);
-        }
+        //for (int n = 0; n < 1000; n++)
+        //{
+        //    break;
+        //    int leftnum = n;
+        //    int Digit1 = leftnum % 10;
+        //    leftnum = (leftnum - Digit1) / 10;
+        //    int Digit2 = leftnum % 10;
+        //    leftnum = (leftnum - Digit2) / 10;
+        //    int Digit3 = leftnum % 10;
+        //    BlendTree2.AddChild(LoadMotion($@"Assets/DBTPractice/Res/Digit1/{Digit1}.anim"), (float)n);
+        //    BlendTree2.AddChild(LoadMotion($@"Assets/DBTPractice/Res/Digit2/{Digit2}.anim"), (float)n);
+        //    BlendTree2.AddChild(LoadMotion($@"Assets/DBTPractice/Res/Digit3/{Digit3}.anim"), (float)n);
+        //}
 
         createAnimatorController();
-        PAssetsSave.run(PROJECTNAME, BlendTree2, BlendTree, animatorState, animatorStateMachine, animatorController); // [Warning!!] Save the smallest element first. If not, it will break when restart.
+        var saver = new PAssetsSave();
+        saver.run(PROJECTNAME, BlendTree2, BlendTree, animatorState, animatorStateMachine, animatorController); // [Warning!!] Save the smallest element first. If not, it will break when restart.
     }
 
     public static void createAnimatorController()
@@ -94,7 +96,7 @@ public class DBTPractice : MonoBehaviour
         animatorController.AddParameter(
             new AnimatorControllerParameter()
             {
-                name = "IIValue",
+                name = BlendTree2.blendParameter,
                 type = AnimatorControllerParameterType.Float,
                 defaultFloat = 0
             }
@@ -102,6 +104,8 @@ public class DBTPractice : MonoBehaviour
     }
     public static AnimationClip LoadMotion(string path)
     {
+        int assetsIndex = path.IndexOf("Assets");
+        path = path.Substring(assetsIndex);
         if (string.IsNullOrEmpty(path))
         {
             Debug.LogError("Animation clip path is empty.");
@@ -149,30 +153,38 @@ public static class BlendTreeExtensions
     }
 }
 
-public static class PAssetsSave
+public class PAssetsSave
 {
     /// <summary>Pan Assets Save [[WARNING: This code will delete all files in the Gen folder without prior notice.]]</summary>
     private static string projectName;
     private static UnityEngine.Object[] assets;
     private static UnityEngine.Object workingAsset;
+    private static string workingDirectory;
     private static Dictionary<Type, string> extensionMap = new Dictionary<Type, string>
     {
         { typeof(BlendTree), "asset" },
         { typeof(AnimatorController), "controller" },
     };
-    public static void run(string _projectName, params UnityEngine.Object[] _assets)
+    public PAssetsSave()
     {
-        Debug.Log("This code is for development use only and is destructive. DO NOT USE in production.");
+        workingDirectory = "";
+        string selectedFolderPath = AssetDatabase.GetAssetPath(Selection.activeObject);
+        if(selectedFolderPath.Length==0 )
+        {
+            throw new Exception("P ASSET SAVE : Working Directory not found. Please activate Project Tab.");
+        }
+        selectedFolderPath = $@"{Path.GetDirectoryName(selectedFolderPath)}/Gen/";
+        selectedFolderPath = selectedFolderPath.Replace("\\", "/").Replace("Gen/Gen", "Gen");
+        Debug.Log($@"P ASSET SAVE : Working Directory：{selectedFolderPath}");
+        workingDirectory = selectedFolderPath.Replace("/", "\\");
+    }
+    public void run(string _projectName, params UnityEngine.Object[] _assets)
+    {
         projectName = _projectName;
         assets = _assets;
         //clearTempDirectory();
         createTempDirectory();
         saveAssets();
-    }
-    private static string tempDirectory()
-    {
-        string selectedFolderPath = AssetDatabase.GetAssetPath(Selection.activeObject);
-        return $@"{Path.GetDirectoryName(selectedFolderPath)}/Gen/";
     }
     private static string fileName()
     {
@@ -180,21 +192,21 @@ public static class PAssetsSave
     }
     private static string savePath()
     {
-        return $@"{tempDirectory()}{fileName()}";
+        return $@"{workingDirectory}{fileName()}";
     }
     private static void clearTempDirectory()
     {
-        if (Directory.Exists(tempDirectory()))
+        if (Directory.Exists(workingDirectory))
         {
-            Directory.Delete(tempDirectory(), true);
+            Directory.Delete(workingDirectory, true);
         }
         createTempDirectory();
     }
     private static void createTempDirectory()
     {
-        if (!Directory.Exists(tempDirectory()))
+        if (!Directory.Exists(workingDirectory))
         {
-            Directory.CreateDirectory(tempDirectory());
+            Directory.CreateDirectory(workingDirectory);
             AssetDatabase.Refresh();
         }
     }
