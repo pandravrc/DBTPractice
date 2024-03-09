@@ -11,6 +11,8 @@ public class DBTPractice : MonoBehaviour
     private const string ONE = "ONEf";
     private static AnimatorController animatorController;
     private static BlendTree BlendTree, BlendTree2;
+    private static AnimatorState animatorState;
+    private static AnimatorStateMachine animatorStateMachine;
 
     [MenuItem("DBT/make")]
     static void createDBT()
@@ -25,25 +27,27 @@ public class DBTPractice : MonoBehaviour
         {
             blendType = BlendTreeType.Simple1D,
             blendParameter = "ObjToggleTest",
-            name = $@"{PROJECTNAME}2"
+            name = $@"{PROJECTNAME}2",
+            useAutomaticThresholds=false,
         };
         BlendTree.AddDirectChild(BlendTree2, ONE);
         BlendTree2.AddChild(LoadMotion("Assets/DBTPractice/Res/OFF.anim"), 0f);
         BlendTree2.AddChild(LoadMotion("Assets/DBTPractice/Res/ON.anim"), 1.0f);
+        BlendTree2.AddChild(LoadMotion("Assets/DBTPractice/Res/Big.anim"), 2.0f);
 
         createAnimatorController();
-        PAssetsSave.run(PROJECTNAME, animatorController, BlendTree, BlendTree2);
+        PAssetsSave.run(PROJECTNAME, BlendTree2, BlendTree, animatorState, animatorStateMachine, animatorController); // [Warning!!] Save the smallest element first. If not, it will break when restart.
     }
 
     public static void createAnimatorController()
     {
-        var animatorState = new AnimatorState()
+        animatorState = new AnimatorState()
         {
             writeDefaultValues = true,
             motion = BlendTree,
             name = "DBT",
         };
-        var animatorStateMachine = new AnimatorStateMachine()
+        animatorStateMachine = new AnimatorStateMachine()
         {
             name = PROJECTNAME,
             states = new[]
@@ -51,6 +55,7 @@ public class DBTPractice : MonoBehaviour
                 new ChildAnimatorState
                 {
                     state = animatorState,
+                    position = Vector3.zero,
                 }
             },
             defaultState = animatorState,
@@ -64,7 +69,7 @@ public class DBTPractice : MonoBehaviour
                 {
                     blendingMode = AnimatorLayerBlendingMode.Override,
                     defaultWeight = 1,
-                    name = PROJECTNAME,
+                    name = $@"{PROJECTNAME}Layer",
                     stateMachine = animatorStateMachine
                 }
             },
@@ -134,7 +139,8 @@ public static class BlendTreeExtensions
         blendTree.children = c;
     }
 }
-public static class PAssetsSave 
+
+public static class PAssetsSave
 {
     /// <summary>Pan Assets Save [[WARNING: This code will delete all files in the Gen folder without prior notice.]]</summary>
     private static string projectName;
@@ -150,7 +156,7 @@ public static class PAssetsSave
         Debug.Log("This code is for development use only and is destructive. DO NOT USE in production.");
         projectName = _projectName;
         assets = _assets;
-        clearTempDirectory();
+        //clearTempDirectory();
         saveAssets();
     }
     private static string tempDirectory()
@@ -184,9 +190,10 @@ public static class PAssetsSave
                 Debug.LogWarning($@"Collision occurred in {savePath()}");
             }
             AssetDatabase.CreateAsset(workingAsset, savePath());
-            AssetDatabase.SaveAssets();
             Debug.Log($@"Asset Saved at: {savePath()}");
         }
+        AssetDatabase.Refresh();
+        AssetDatabase.SaveAssets();
     }
     private static string extension()
     {

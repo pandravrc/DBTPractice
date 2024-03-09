@@ -23,8 +23,8 @@ AnimatorController:
     m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
-    m_Name: DBTPractice
-    m_StateMachine: {fileID: 0}
+    m_Name: DBTPracticeLayer
+    m_StateMachine: {fileID: 110700000, guid: b1691e0a2220d4548af143b3e14eed4a, type: 2}
     m_Mask: {fileID: 0}
     m_Motions: []
     m_Behaviours: []

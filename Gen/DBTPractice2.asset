@@ -9,7 +9,7 @@ BlendTree:
   m_Name: DBTPractice2
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 898ab4e598e104042b60c754748d4cb6, type: 2}
+    m_Motion: {fileID: 7400000, guid: 6c8019e61ace0404a83ebc113365796f, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -17,8 +17,16 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 0bae4f4058e5a064d9c7c4a888f00e19, type: 2}
+    m_Motion: {fileID: 7400000, guid: 18d1b1434f8d3dd458dc6ffa57454f7d, type: 2}
     m_Threshold: 1
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Blend
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 0bae4f4058e5a064d9c7c4a888f00e19, type: 2}
+    m_Threshold: 2
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -28,6 +36,6 @@ BlendTree:
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
+  m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0

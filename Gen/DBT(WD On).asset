@@ -9,7 +9,7 @@ BlendTree:
   m_Name: DBT(WD On)
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 0}
+    m_Motion: {fileID: 20600000, guid: fa984360412a1d84e92c1c53a4b3e61a, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
