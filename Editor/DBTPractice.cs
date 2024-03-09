@@ -31,9 +31,10 @@ public class DBTPractice : MonoBehaviour
             useAutomaticThresholds=false,
         };
         BlendTree.AddDirectChild(BlendTree2, ONE);
-        BlendTree2.AddChild(LoadMotion("Assets/DBTPractice/Res/OFF.anim"), 0f);
-        BlendTree2.AddChild(LoadMotion("Assets/DBTPractice/Res/ON.anim"), 1.0f);
-        BlendTree2.AddChild(LoadMotion("Assets/DBTPractice/Res/Big.anim"), 2.0f);
+        for(int n = 0; n < 10; n++)
+        {
+            BlendTree2.AddChild(LoadMotion($@"Assets/DBTPractice/Res/{n}.anim"), (float)n);
+        }
 
         createAnimatorController();
         PAssetsSave.run(PROJECTNAME, BlendTree2, BlendTree, animatorState, animatorStateMachine, animatorController); // [Warning!!] Save the smallest element first. If not, it will break when restart.
