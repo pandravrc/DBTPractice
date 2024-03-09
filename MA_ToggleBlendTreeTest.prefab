@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &440755825898585323
+--- !u!1 &7685594950161888354
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,36 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 440755825898585316}
-  - component: {fileID: 440755825898585317}
+  - component: {fileID: 7685594950161888357}
+  - component: {fileID: 7685594950161888356}
   m_Layer: 0
-  m_Name: 6
+  m_Name: IntSwitch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &440755825898585316
+--- !u!4 &7685594950161888357
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440755825898585323}
+  m_GameObject: {fileID: 7685594950161888354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1312133760086419529}
-  m_RootOrder: 6
+  m_Children:
+  - {fileID: 9115554227729860599}
+  - {fileID: 9115554227892199118}
+  - {fileID: 9115554228016987517}
+  m_Father: {fileID: 7685594950748427415}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &440755825898585317
+--- !u!114 &7685594950161888356
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440755825898585323}
+  m_GameObject: {fileID: 7685594950161888354}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b29d45007c5493d926d2cd45a489529, type: 3}
@@ -46,19 +49,20 @@ MonoBehaviour:
   Control:
     name: 
     icon: {fileID: 0}
-    type: 102
+    type: 103
     parameter:
-      name: ObjToggleTest
-    value: 6
+      name: 
+    value: 0
     style: 0
     subMenu: {fileID: 0}
-    subParameters: []
+    subParameters:
+    - name: ObjToggleTest
     labels: []
-  MenuSource: 0
+  MenuSource: 1
   menuSource_otherObjectChildren: {fileID: 0}
   isSynced: 1
   isSaved: 1
---- !u!1 &440755825978771234
+--- !u!1 &7685594950748427412
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -66,57 +70,105 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 440755825978771235}
-  - component: {fileID: 440755825978771260}
+  - component: {fileID: 7685594950748427415}
+  - component: {fileID: 7685594950748427403}
+  - component: {fileID: 7685594950748427400}
+  - component: {fileID: 7685594950748427401}
+  - component: {fileID: 7685594950748427414}
   m_Layer: 0
-  m_Name: 7
+  m_Name: MA_ToggleBlendTreeTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &440755825978771235
+--- !u!4 &7685594950748427415
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440755825978771234}
+  m_GameObject: {fileID: 7685594950748427412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1312133760086419529}
-  m_RootOrder: 7
+  m_Children:
+  - {fileID: 7685594950161888357}
+  - {fileID: 8721868545703069984}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &440755825978771260
+--- !u!114 &7685594950748427403
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440755825978771234}
+  m_GameObject: {fileID: 7685594950748427412}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b29d45007c5493d926d2cd45a489529, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ef83cb0c23d4d7c9d41021e544a1978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Control:
-    name: 
-    icon: {fileID: 0}
-    type: 102
-    parameter:
-      name: ObjToggleTest
-    value: 7
-    style: 0
-    subMenu: {fileID: 0}
-    subParameters: []
-    labels: []
-  MenuSource: 0
-  menuSource_otherObjectChildren: {fileID: 0}
-  isSynced: 1
-  isSaved: 1
---- !u!1 &440755826286053453
+  menuToAppend: {fileID: 0}
+  installTargetMenu: {fileID: 0}
+--- !u!114 &7685594950748427400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7685594950748427412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb122659f724ebf85fe095ac02dc339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 9100000, guid: 9d0ae64f8a013ca4ca31cbbf8aeb416f, type: 2}
+  layerType: 5
+  deleteAttachedAnimator: 0
+  pathMode: 1
+  matchAvatarWriteDefaults: 0
+  relativePathRoot:
+    referencePath: 
+  layerPriority: 0
+--- !u!114 &7685594950748427401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7685594950748427412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a96d4ea0c344f39e277d82035bf9bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameters:
+  - nameOrPrefix: ObjToggleTest
+    remapTo: 
+    internalParameter: 0
+    isPrefix: 0
+    syncType: 1
+    localOnly: 0
+    defaultValue: 0
+    saved: 0
+    hasExplicitDefaultValue: 0
+    m_overrideAnimatorDefaults: 0
+--- !u!114 &7685594950748427414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7685594950748427412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97e46a47dd8a425eb4ce9411defe313d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObject: {fileID: 0}
+--- !u!1 &9115554227729860598
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,240 +176,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 440755826286053454}
-  - component: {fileID: 440755826286053455}
-  m_Layer: 0
-  m_Name: 9
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &440755826286053454
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440755826286053453}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1312133760086419529}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &440755826286053455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440755826286053453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b29d45007c5493d926d2cd45a489529, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Control:
-    name: 
-    icon: {fileID: 0}
-    type: 102
-    parameter:
-      name: ObjToggleTest
-    value: 9
-    style: 0
-    subMenu: {fileID: 0}
-    subParameters: []
-    labels: []
-  MenuSource: 0
-  menuSource_otherObjectChildren: {fileID: 0}
-  isSynced: 1
-  isSaved: 1
---- !u!1 &440755826479282188
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 440755826479282189}
-  - component: {fileID: 440755826479282190}
-  m_Layer: 0
-  m_Name: 5
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &440755826479282189
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440755826479282188}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1312133760086419529}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &440755826479282190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440755826479282188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b29d45007c5493d926d2cd45a489529, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Control:
-    name: 
-    icon: {fileID: 0}
-    type: 102
-    parameter:
-      name: ObjToggleTest
-    value: 5
-    style: 0
-    subMenu: {fileID: 0}
-    subParameters: []
-    labels: []
-  MenuSource: 0
-  menuSource_otherObjectChildren: {fileID: 0}
-  isSynced: 1
-  isSaved: 1
---- !u!1 &440755826719804112
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 440755826719804113}
-  - component: {fileID: 440755826719804114}
-  m_Layer: 0
-  m_Name: 8
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &440755826719804113
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440755826719804112}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1312133760086419529}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &440755826719804114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440755826719804112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b29d45007c5493d926d2cd45a489529, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Control:
-    name: 
-    icon: {fileID: 0}
-    type: 102
-    parameter:
-      name: ObjToggleTest
-    value: 8
-    style: 0
-    subMenu: {fileID: 0}
-    subParameters: []
-    labels: []
-  MenuSource: 0
-  menuSource_otherObjectChildren: {fileID: 0}
-  isSynced: 1
-  isSaved: 1
---- !u!1 &440755827197176715
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 440755827197176708}
-  - component: {fileID: 440755827197176709}
-  m_Layer: 0
-  m_Name: 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &440755827197176708
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440755827197176715}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1312133760086419529}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &440755827197176709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440755827197176715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b29d45007c5493d926d2cd45a489529, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Control:
-    name: 
-    icon: {fileID: 0}
-    type: 102
-    parameter:
-      name: ObjToggleTest
-    value: 2
-    style: 0
-    subMenu: {fileID: 0}
-    subParameters: []
-    labels: []
-  MenuSource: 0
-  menuSource_otherObjectChildren: {fileID: 0}
-  isSynced: 1
-  isSaved: 1
---- !u!1 &440755827269972344
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 440755827269972345}
-  - component: {fileID: 440755827269972346}
+  - component: {fileID: 9115554227729860599}
+  - component: {fileID: 9115554227729860600}
   m_Layer: 0
   m_Name: 3
   m_TagString: Untagged
@@ -365,27 +185,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &440755827269972345
+--- !u!4 &9115554227729860599
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440755827269972344}
+  m_GameObject: {fileID: 9115554227729860598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1312133760086419529}
-  m_RootOrder: 3
+  m_Father: {fileID: 7685594950161888357}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &440755827269972346
+--- !u!114 &9115554227729860600
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440755827269972344}
+  m_GameObject: {fileID: 9115554227729860598}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b29d45007c5493d926d2cd45a489529, type: 3}
@@ -406,7 +226,7 @@ MonoBehaviour:
   menuSource_otherObjectChildren: {fileID: 0}
   isSynced: 1
   isSaved: 1
---- !u!1 &440755827376253893
+--- !u!1 &9115554227892199117
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -414,258 +234,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 440755827376253894}
-  - component: {fileID: 440755827376253895}
+  - component: {fileID: 9115554227892199118}
+  - component: {fileID: 9115554227892199119}
   m_Layer: 0
-  m_Name: 4
+  m_Name: 26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &440755827376253894
+--- !u!4 &9115554227892199118
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440755827376253893}
+  m_GameObject: {fileID: 9115554227892199117}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1312133760086419529}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &440755827376253895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440755827376253893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b29d45007c5493d926d2cd45a489529, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Control:
-    name: 
-    icon: {fileID: 0}
-    type: 102
-    parameter:
-      name: ObjToggleTest
-    value: 4
-    style: 0
-    subMenu: {fileID: 0}
-    subParameters: []
-    labels: []
-  MenuSource: 0
-  menuSource_otherObjectChildren: {fileID: 0}
-  isSynced: 1
-  isSaved: 1
---- !u!1 &1312133758346736500
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1312133758346736503}
-  - component: {fileID: 1312133758346736502}
-  m_Layer: 0
-  m_Name: 0
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1312133758346736503
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312133758346736500}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1312133760086419529}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1312133758346736502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312133758346736500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b29d45007c5493d926d2cd45a489529, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Control:
-    name: 
-    icon: {fileID: 0}
-    type: 102
-    parameter:
-      name: ObjToggleTest
-    value: 0
-    style: 0
-    subMenu: {fileID: 0}
-    subParameters: []
-    labels: []
-  MenuSource: 0
-  menuSource_otherObjectChildren: {fileID: 0}
-  isSynced: 1
-  isSaved: 1
---- !u!1 &1312133759599216824
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1312133759599216827}
-  - component: {fileID: 1312133759599216807}
-  - component: {fileID: 1312133759599216804}
-  - component: {fileID: 1312133759599216805}
-  - component: {fileID: 1312133759599216826}
-  m_Layer: 0
-  m_Name: MA_ToggleBlendTreeTest
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1312133759599216827
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312133759599216824}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1312133760086419529}
-  - {fileID: 114657534993241356}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1312133759599216807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312133759599216824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ef83cb0c23d4d7c9d41021e544a1978, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuToAppend: {fileID: 0}
-  installTargetMenu: {fileID: 0}
---- !u!114 &1312133759599216804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312133759599216824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bb122659f724ebf85fe095ac02dc339, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 9100000, guid: 9d0ae64f8a013ca4ca31cbbf8aeb416f, type: 2}
-  layerType: 5
-  deleteAttachedAnimator: 0
-  pathMode: 1
-  matchAvatarWriteDefaults: 0
-  relativePathRoot:
-    referencePath: 
-  layerPriority: 0
---- !u!114 &1312133759599216805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312133759599216824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71a96d4ea0c344f39e277d82035bf9bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parameters:
-  - nameOrPrefix: ObjToggleTest
-    remapTo: 
-    internalParameter: 0
-    isPrefix: 0
-    syncType: 1
-    localOnly: 0
-    defaultValue: 0
-    saved: 0
-    hasExplicitDefaultValue: 0
-    m_overrideAnimatorDefaults: 0
---- !u!114 &1312133759599216826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312133759599216824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97e46a47dd8a425eb4ce9411defe313d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetObject: {fileID: 0}
---- !u!1 &1312133759778318402
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1312133759778318413}
-  - component: {fileID: 1312133759778318412}
-  m_Layer: 0
-  m_Name: 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1312133759778318413
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312133759778318402}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1312133760086419529}
+  m_Father: {fileID: 7685594950161888357}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1312133759778318412
+--- !u!114 &9115554227892199119
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312133759778318402}
+  m_GameObject: {fileID: 9115554227892199117}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b29d45007c5493d926d2cd45a489529, type: 3}
@@ -674,10 +272,10 @@ MonoBehaviour:
   Control:
     name: 
     icon: {fileID: 0}
-    type: 102
+    type: 101
     parameter:
       name: ObjToggleTest
-    value: 1
+    value: 26
     style: 0
     subMenu: {fileID: 0}
     subParameters: []
@@ -686,7 +284,7 @@ MonoBehaviour:
   menuSource_otherObjectChildren: {fileID: 0}
   isSynced: 1
   isSaved: 1
---- !u!1 &1312133760086419534
+--- !u!1 &9115554228016987516
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -694,46 +292,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1312133760086419529}
-  - component: {fileID: 1312133760086419528}
+  - component: {fileID: 9115554228016987517}
+  - component: {fileID: 9115554228016987518}
   m_Layer: 0
-  m_Name: IntSwitch
+  m_Name: 99
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1312133760086419529
+--- !u!4 &9115554228016987517
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312133760086419534}
+  m_GameObject: {fileID: 9115554228016987516}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1312133758346736503}
-  - {fileID: 1312133759778318413}
-  - {fileID: 440755827197176708}
-  - {fileID: 440755827269972345}
-  - {fileID: 440755827376253894}
-  - {fileID: 440755826479282189}
-  - {fileID: 440755825898585316}
-  - {fileID: 440755825978771235}
-  - {fileID: 440755826719804113}
-  - {fileID: 440755826286053454}
-  m_Father: {fileID: 1312133759599216827}
-  m_RootOrder: 0
+  m_Children: []
+  m_Father: {fileID: 7685594950161888357}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1312133760086419528
+--- !u!114 &9115554228016987518
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312133760086419534}
+  m_GameObject: {fileID: 9115554228016987516}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b29d45007c5493d926d2cd45a489529, type: 3}
@@ -742,24 +330,24 @@ MonoBehaviour:
   Control:
     name: 
     icon: {fileID: 0}
-    type: 103
+    type: 101
     parameter:
-      name: 
-    value: 0
+      name: ObjToggleTest
+    value: 99
     style: 0
     subMenu: {fileID: 0}
     subParameters: []
     labels: []
-  MenuSource: 1
+  MenuSource: 0
   menuSource_otherObjectChildren: {fileID: 0}
   isSynced: 1
   isSaved: 1
---- !u!1001 &440755826691764967
+--- !u!1001 &9115554227869298379
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1312133759599216827}
+    m_TransformParent: {fileID: 7685594950748427415}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8179ea7cc164e4847b6aa34de1fe10c3,
         type: 3}
@@ -859,7 +447,7 @@ PrefabInstance:
     - target: {fileID: -3887185075125053422, guid: 8179ea7cc164e4847b6aa34de1fe10c3,
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -3887185075125053422, guid: 8179ea7cc164e4847b6aa34de1fe10c3,
         type: 3}
@@ -911,6 +499,56 @@ PrefabInstance:
       propertyPath: m_BlendShapeWeights.Array.data[9]
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 8179ea7cc164e4847b6aa34de1fe10c3,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[10]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 8179ea7cc164e4847b6aa34de1fe10c3,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[11]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 8179ea7cc164e4847b6aa34de1fe10c3,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[12]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 8179ea7cc164e4847b6aa34de1fe10c3,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[13]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 8179ea7cc164e4847b6aa34de1fe10c3,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[14]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 8179ea7cc164e4847b6aa34de1fe10c3,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[15]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 8179ea7cc164e4847b6aa34de1fe10c3,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[16]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 8179ea7cc164e4847b6aa34de1fe10c3,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[17]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 8179ea7cc164e4847b6aa34de1fe10c3,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[18]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 8179ea7cc164e4847b6aa34de1fe10c3,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[19]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8179ea7cc164e4847b6aa34de1fe10c3,
         type: 3}
       propertyPath: m_Name
@@ -918,9 +556,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8179ea7cc164e4847b6aa34de1fe10c3, type: 3}
---- !u!4 &114657534993241356 stripped
+--- !u!4 &8721868545703069984 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8179ea7cc164e4847b6aa34de1fe10c3,
     type: 3}
-  m_PrefabInstance: {fileID: 440755826691764967}
+  m_PrefabInstance: {fileID: 9115554227869298379}
   m_PrefabAsset: {fileID: 0}

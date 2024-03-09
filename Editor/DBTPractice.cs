@@ -26,14 +26,22 @@ public class DBTPractice : MonoBehaviour
         BlendTree2 = new BlendTree()
         {
             blendType = BlendTreeType.Simple1D,
-            blendParameter = "ObjToggleTest",
+            blendParameter = "IIValue",
             name = $@"{PROJECTNAME}2",
             useAutomaticThresholds=false,
         };
         BlendTree.AddDirectChild(BlendTree2, ONE);
-        for(int n = 0; n < 10; n++)
+        for(int n = 0; n < 1000; n++)
         {
-            BlendTree2.AddChild(LoadMotion($@"Assets/DBTPractice/Res/{n}.anim"), (float)n);
+            int leftnum = n;
+            int Digit1 = leftnum % 10;
+            leftnum = (leftnum - Digit1) / 10;
+            int Digit2 = leftnum % 10;
+            leftnum = (leftnum - Digit2) / 10;
+            int Digit3 = leftnum % 10;
+            BlendTree2.AddChild(LoadMotion($@"Assets/DBTPractice/Res/Digit1/{Digit1}.anim"), (float)n);
+            BlendTree2.AddChild(LoadMotion($@"Assets/DBTPractice/Res/Digit2/{Digit2}.anim"), (float)n);
+            BlendTree2.AddChild(LoadMotion($@"Assets/DBTPractice/Res/Digit3/{Digit3}.anim"), (float)n);
         }
 
         createAnimatorController();
@@ -86,7 +94,7 @@ public class DBTPractice : MonoBehaviour
         animatorController.AddParameter(
             new AnimatorControllerParameter()
             {
-                name = "ObjToggleTest",
+                name = "IIValue",
                 type = AnimatorControllerParameterType.Float,
                 defaultFloat = 0
             }
