@@ -166,11 +166,13 @@ public static class PAssetsSave
         projectName = _projectName;
         assets = _assets;
         //clearTempDirectory();
+        createTempDirectory();
         saveAssets();
     }
     private static string tempDirectory()
     {
-        return $@"Assets/{projectName}/Gen/";
+        string selectedFolderPath = AssetDatabase.GetAssetPath(Selection.activeObject);
+        return $@"{Path.GetDirectoryName(selectedFolderPath)}/Gen/";
     }
     private static string fileName()
     {
@@ -186,8 +188,15 @@ public static class PAssetsSave
         {
             Directory.Delete(tempDirectory(), true);
         }
-        Directory.CreateDirectory(tempDirectory());
-        AssetDatabase.Refresh();
+        createTempDirectory();
+    }
+    private static void createTempDirectory()
+    {
+        if (!Directory.Exists(tempDirectory()))
+        {
+            Directory.CreateDirectory(tempDirectory());
+            AssetDatabase.Refresh();
+        }
     }
     private static void saveAssets()
     {
