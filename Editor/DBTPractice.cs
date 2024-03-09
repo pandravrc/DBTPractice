@@ -19,15 +19,17 @@ public class DBTPractice : MonoBehaviour
         BlendTree = new BlendTree()
         {
             blendType = BlendTreeType.Direct,
-            name = PROJECTNAME
+            name = "DBT(WD On)",
         };
         BlendTree2 = new BlendTree()
         {
             blendType = BlendTreeType.Simple1D,
-            blendParameter = ONE,
+            blendParameter = "ObjToggleTest",
             name = $@"{PROJECTNAME}2"
         };
         BlendTree.AddDirectChild(BlendTree2, ONE);
+        BlendTree2.AddChild(LoadMotion("Assets/DBTPractice/Res/OFF.anim"), 0f);
+        BlendTree2.AddChild(LoadMotion("Assets/DBTPractice/Res/ON.anim"), 1.0f);
 
         createAnimatorController();
         PAssetsSave.run(PROJECTNAME, animatorController, BlendTree, BlendTree2);
@@ -75,8 +77,40 @@ public class DBTPractice : MonoBehaviour
                 defaultFloat = 1
             }
         );
+        animatorController.AddParameter(
+            new AnimatorControllerParameter()
+            {
+                name = "ObjToggleTest",
+                type = AnimatorControllerParameterType.Float,
+                defaultFloat = 0
+            }
+        );
     }
-
+    public static AnimationClip LoadMotion(string path)
+    {
+        if (string.IsNullOrEmpty(path))
+        {
+            Debug.LogError("Animation clip path is empty.");
+            return null;
+        }
+        if (!File.Exists(path))
+        {
+            Debug.LogError("Animation clip does not exist: " + path);
+            return null;
+        }
+        if (!path.EndsWith(".anim"))
+        {
+            Debug.LogError("Animation clip file format is invalid: " + path);
+            return null;
+        }
+        AnimationClip clip = AssetDatabase.LoadAssetAtPath<AnimationClip>(path);
+        if (clip == null)
+        {
+            Debug.LogError("Failed to load animation clip: " + path);
+            return null;
+        }
+        return clip;
+    }
 }
 public static class BlendTreeExtensions
 {
