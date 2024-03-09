@@ -155,7 +155,7 @@ public static class PAssetsSave
     }
     private static string tempDirectory()
     {
-        return $@"Assets/{projectName}/Temp/";
+        return $@"Assets/{projectName}/Gen/";
     }
     private static string fileName()
     {
